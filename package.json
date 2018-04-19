@@ -11,10 +11,7 @@
     "build": "babel -o ./dist/index.js ./index.js"
   },
   "author": "Michael Douglas",
-  "keywords": [
-    "pusher",
-    "speedofme"
-  ],
+  "keywords": ["react speedofme", "speedofme"],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -52,11 +49,7 @@
       ".*mock.*",
       ".*stub.*"
     ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules",
-      ".*mock.*",
-      ".*stub.*"
-    ]
+    "testPathIgnorePatterns": ["<rootDir>/node_modules", ".*mock.*", ".*stub.*"]
   },
   "peerDependencies": {
     "react": ">=15",
