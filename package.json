@@ -6,12 +6,15 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./index.js __tests__/index.js",
+    "lint": "eslint ./src/index.js __tests__/index.js",
     "prepublish": "yarn run build",
-    "build": "babel ./index.js --out-dir dist"
+    "build": "babel src --out-dir dist"
   },
   "author": "Michael Douglas",
-  "keywords": ["react speedofme", "speedofme"],
+  "keywords": [
+    "react speedofme",
+    "speedofme"
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -44,7 +47,10 @@
     "lodash": "^4.13.1",
     "npm": "^5.8.0",
     "prop-types": "^15.6.0",
-    "react-d3-speedometer": "^0.3.2"
+    "react-d3-speedometer": "^0.3.2",
+    "react-display-name": "^0.2.4",
+    "scriptjs": "^2.5.8",
+    "speedofme": "^2.0.0"
   },
   "jest": {
     "timers": "fake",
@@ -54,10 +60,13 @@
       ".*mock.*",
       ".*stub.*"
     ],
-    "testPathIgnorePatterns": ["<rootDir>/node_modules", ".*mock.*", ".*stub.*"]
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      ".*mock.*",
+      ".*stub.*"
+    ]
   },
   "peerDependencies": {
-    "react": ">=15",
-    "speedofme": "*"
+    "react": ">=15"
   }
 }

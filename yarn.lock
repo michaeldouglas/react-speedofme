@@ -6205,6 +6205,10 @@ react-d3-speedometer@^0.3.2:
     d3 "^4.10.0"
     prop-types "^15.5.10"
 
+react-display-name@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-display-name/-/react-display-name-0.2.4.tgz#e2a670b81d79a2204335510c01246f4c92ff12cf"
+
 react-dom@^15.1.0:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
@@ -6213,10 +6217,6 @@ react-dom@^15.1.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-
-react-svg-gauge@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-svg-gauge/-/react-svg-gauge-1.0.8.tgz#d4a168b093be7dbb8e69d29abcd88cac0b2545b4"
 
 react-test-renderer@^15.6.1:
   version "15.6.2"
@@ -6766,6 +6766,10 @@ scoped-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/scoped-regex/-/scoped-regex-1.0.0.tgz#a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8"
 
+scriptjs@^2.5.8:
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.8.tgz#d0c43955c2e6bad33b6e4edf7b53b8965aa7ca5f"
+
 semver-diff@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -7003,6 +7007,10 @@ spdx-expression-parse@^3.0.0:
 spdx-license-ids@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.0.tgz#7a7cd28470cc6d3a1cfe6d66886f6bc430d3ac87"
+
+speedofme@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/speedofme/-/speedofme-2.0.0.tgz#a62b5f1acbe612e27df8f84bb1cde0828ccb614b"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

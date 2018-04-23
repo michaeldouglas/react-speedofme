@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
+body {
+  #react-speedofme {
+    width: 40vw;
+    height: 55vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .gauge {
+      width: 500px;
+      height: 300px;
+      float: left;
+    }
+    .total-speed {
+      float: right;
+      color: #646464;
+      font-family: 'Asap', sans-serif;
+      font-size: 6.5ch;
+      font-weight: bold;
+      line-height: 48px;
+    }
+  }
+}
