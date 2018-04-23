@@ -41,7 +41,6 @@ export default function preloadScript(InnerComponent) {
     };
     render() {
       const { speedofmeClientUrl, loadingDelegate } = this.props;
-      console.log(this.props);
       if (this.state.scriptLoaded) {
         return <InnerComponent />;
       }
