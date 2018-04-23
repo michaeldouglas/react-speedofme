@@ -8,7 +8,7 @@
     "test": "jest",
     "lint": "eslint ./index.js __tests__/index.js",
     "prepublish": "yarn run build",
-    "build": "babel -o ./dist/index.js ./index.js"
+    "build": "babel ./index.js --out-dir dist"
   },
   "author": "Michael Douglas",
   "keywords": ["react speedofme", "speedofme"],
