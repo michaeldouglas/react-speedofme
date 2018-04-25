@@ -2,23 +2,51 @@
 
 body {
   #react-speedofme {
-    width: 40vw;
-    height: 55vh;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-family: 'Asap', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
-    .gauge {
-      width: 500px;
-      height: 300px;
-      float: left;
+    .card {
+      padding: 0;
+      text-align: left;
+
+      .gauge {
+        width: 14.6vw;
+        height: 17vh;
+      }
+
+      .total-box {
+        width: 15.6vw;
+        height: 17vh;
+
+        .total {
+          display: block;
+          height: 8vh;
+          width: 16vw;
+          text-align: center;
+          .total-speed {
+            color: #646464;
+            font-size: 6.5ch;
+            font-weight: bold;
+            line-height: 48px;
+            margin-bottom: 1.4rem;
+          }
+          .text-speed {
+            color: #f6734e;
+            font-weight: bold;
+            line-height: 32px;
+            font-size: 2.2ch;
+          }
+        }
+      }
     }
-    .total-speed {
-      float: right;
-      color: #646464;
-      font-family: 'Asap', sans-serif;
-      font-size: 6.5ch;
-      font-weight: bold;
-      line-height: 48px;
+
+    .flex-total-centered {
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
   }
 }

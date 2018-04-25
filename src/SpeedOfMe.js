@@ -7,6 +7,7 @@ export default class SpeedOfMe extends Component {
   state = {
     percentDone: 0,
     download: 0,
+    speedText: 'Speed test in progress. Please wait...',
   };
 
   componentWillMount() {
@@ -19,9 +20,13 @@ export default class SpeedOfMe extends Component {
     SomApi.startTest();
   }
 
-  onTestCompleted(testResult) {
+  onTestCompleted(result) {
+    let uploadInKB = result.upload * 1024;
+
+    this.state.download(result.download, this.state);
+
     this.state.setState({
-      download: testResult.download,
+      download: result.download,
     });
   }
 
@@ -30,9 +35,26 @@ export default class SpeedOfMe extends Component {
   }
 
   onProgress(progress) {
-    console.log(progress);
     this.state.setState({
-      percentDone: progress.percentDone,
+      percentDone: progress.percentDone * 2,
+      download: progress.percentDone,
+    });
+  }
+
+  download(download, state) {
+    let downloadInKB = download * 1024;
+    let speedText;
+
+    if (downloadInKB > 1000) {
+      speedText = 'Velocidade Execelente';
+    } else if (downloadInKB > 600) {
+      speedText = 'Velocidade Execelente';
+    } else if (downloadInKB > 300) {
+      speedText = 'Velocidade Execelente';
+    }
+
+    state.setState({
+      speedText,
     });
   }
 
@@ -46,29 +68,36 @@ export default class SpeedOfMe extends Component {
       needleTransitionDuration,
       needleTransition,
       currentValueText,
-      speedText,
     } = this.props;
 
-    const { percentDone, download } = this.state;
+    const { percentDone, download, speedText } = this.state;
 
     return (
       <div id="react-speedofme">
-        <div className="gauge">
-          <ReactSpeedometer
-            fluidWidth
-            segments={segments}
-            textColor={textColor}
-            startColor={startColor}
-            endColor={endColor}
-            needleColor={needleColor}
-            value={percentDone}
-            needleTransitionDuration={needleTransitionDuration}
-            needleTransition={needleTransition}
-            currentValueText={`${currentValueText}Mbps`}
-          />
+        <div className="card">
+          <div className="gauge">
+            <ReactSpeedometer
+              fluidWidth
+              segments={segments}
+              textColor={textColor}
+              startColor={startColor}
+              endColor={endColor}
+              needleColor={needleColor}
+              value={percentDone}
+              needleTransitionDuration={needleTransitionDuration}
+              needleTransition={needleTransition}
+              currentValueText={`${currentValueText}Mbps`}
+            />
+          </div>
         </div>
-        <div className="total-speed">{download} Mbps</div>
-        <div className="text-speed">{speedText}</div>
+        <div className="card">
+          <div className="total-box flex-total-centered">
+            <div className="total">
+              <div className="total-speed">{download} Mbps</div>
+              <div className="text-speed">{speedText}</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

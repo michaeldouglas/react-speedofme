@@ -18,7 +18,6 @@ class App extends Component {
           needleTransitionDuration={4000}
           needleTransition='easeElastic'
           currentValueText='50'
-          speedText='Velocidade Excelente'
         />
       </div>
     );
