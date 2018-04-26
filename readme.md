@@ -1,6 +1,6 @@
 # React SpeedOf.Me Component
 
-react-speedofme is a react component for use the API Speed Of Me
+react-speedofme is a react component to use the API Speed Of Me
 
 [![Build Status](https://travis-ci.org/michaeldouglas/react-speedofme.svg?branch=master)](https://travis-ci.org/michaeldouglas/react-speedofme)
 [![GitHub license](https://img.shields.io/github/license/michaeldouglas/react-speedofme.svg)](https://github.com/michaeldouglas/react-speedofme/blob/master/license.md)
@@ -34,8 +34,8 @@ export default preloadScript(App);
 
 ## Creating Account and configuring SpeedOf.Me API
 
- - Create your account it's here [Register](https://speedof.me/api/user/register.php) 
- - After create a account configure your domain here: [Configure Domain](https://speedof.me/api/user/user_settings.php) 
+ - Create your account here [Register](https://speedof.me/api/user/register.php) 
+ - After creating the account configure your domain here: [Configure Domain](https://speedof.me/api/user/user_settings.php) 
 
 ## Configuration Options:
 
@@ -48,7 +48,7 @@ export default preloadScript(App);
 | needleColor | string         | steelblue | Should be a valid color code - colorname, hexadecimal name or rgb value. Should be a valid input for [d3.interpolateHsl](https://github.com/d3/d3-interpolate#interpolateHsl)   |
 | needleTransitionDuration | number         | 500     | Time in milliseconds. |
 | needleTransition | string         | easeQuadInOut | [d3-easing-identifiers](https://github.com/d3/d3-ease) - easeLinear, easeQuadIn, easeQuadOut, easeQuadInOut, easeCubicIn, easeCubicOut, easeCubicInOut, easePolyIn, easePolyOut, easePolyInOut, easeSinIn, 
-| currentValueText | string | ${value} | Should be provided a string which should have **${value}** placeholder which will be replaced with current value. By default, current value is shown (formatted with `valueFormat`). For example, if current Value is 333 if 
+| currentValueText | string | ${value} | Should be provided a string which should have **${value}** placeholder which will be replaced with current value. By default, current value is shown (formatted with `valueFormat`). For example, if current Value is 333
 | loadingTextDownload | string | value |  Should be provided a string for modify the text default the test of download   |
 | loadingTextUpload | string | value |  Should be provided a string for modify the text default the test of upload   |
 | textdownloadexcellent | string | value |  Should be provided a string for modify the text default for download Excellent   |
@@ -56,7 +56,7 @@ export default preloadScript(App);
 | textuploadexcellent | string | value |  Should be provided a string for modify the text default for upload Excellent   |
 | textuploadacceptable | string | value |  Should be provided a string for modify the text default for upload Acceptable   |
 | account | string | value |  Should be provided your account SpeedOf.me  |
-| domainName | string | value |  Domain that will test  |
+| domainName | string | value |  Domain that will be tested  |
 
 ## Examples
 
