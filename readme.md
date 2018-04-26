@@ -21,7 +21,15 @@ react-speedofme is a react component for use the API Speed Of Me
 // import the component
 import { SpeedOfMe, preloadScript } from "react-speedofme";
 // and just use it
-<SpeedOfMe/>
+class App extends Component {
+  render () {
+    return (
+        <SpeedOfMe/>
+    );
+  }
+}
+// Export preloadScrtipt
+export default preloadScript(App);
 ```
 
 ## Creating Account and configuring SpeedOf.Me API
@@ -58,29 +66,43 @@ You can view [Examples here](https://github.com/michaeldouglas/react-speedofme/t
 
 ```javascript
 import { SpeedOfMe, preloadScript } from "react-speedofme";
-<SpeedOfMe/>
+class App extends Component {
+  render () {
+    return (
+        <SpeedOfMe/>
+    );
+  }
+}
+export default preloadScript(App);
 ```
 
 ##### With configurations
 ```javascript
-<SpeedOfMe
-    account=''
-    domainName=''
-    segments={2}
-    textColor='#FFF'
-    startColor='#F4552C'
-    endColor='#F9F9F9'
-    needleColor='#989898'
-    needleTransitionDuration={4000}
-    needleTransition='easeElastic'
-    currentValueText='50'
-    textdownloadexcellent='Velocidade de download execelente.'
-    textdownloadacceptable='Velocidade de download aceitável.'
-    textuploadexcellent='Velocidade de upload execelente.'
-    textuploadacceptable='Velocidade de upload aceitável.'
-    loadingTextDownload='Rodando teste de Download, por favor, aguarde...'
-    loadingTextUpload='Rodando teste de Upload, por favor, aguarde...'
-/>
+class App extends Component {
+  render () {
+    return (
+        <SpeedOfMe
+            account=''
+            domainName=''
+            segments={2}
+            textColor='#FFF'
+            startColor='#F4552C'
+            endColor='#F9F9F9'
+            needleColor='#989898'
+            needleTransitionDuration={4000}
+            needleTransition='easeElastic'
+            currentValueText='50'
+            textdownloadexcellent='Velocidade de download execelente.'
+            textdownloadacceptable='Velocidade de download aceitável.'
+            textuploadexcellent='Velocidade de upload execelente.'
+            textuploadacceptable='Velocidade de upload aceitável.'
+            loadingTextDownload='Rodando teste de Download, por favor, aguarde...'
+            loadingTextUpload='Rodando teste de Upload, por favor, aguarde...'
+        />
+    );
+  }
+}
+export default preloadScript(App);
 ```
 
 #### Credits:
