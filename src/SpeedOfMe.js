@@ -6,27 +6,53 @@ import ReactSpeedometer from 'react-d3-speedometer';
 export default class SpeedOfMe extends Component {
   state = {
     percentDone: 0,
-    download: 0,
-    speedText: 'Speed test in progress. Please wait...',
+    velocity: 0,
+    speedTextDownload: 'Speed test download in progress. Please wait...',
+    speedTextUpload: 'Speed test upload in progress. Please wait...',
   };
 
   componentWillMount() {
-    SomApi.account = this.props.account;
-    SomApi.domainName = this.props.domainName;
+    const {
+      account,
+      domainName,
+      loadingTextDownload,
+      loadingTextUpload,
+    } = this.props;
+
+    SomApi.account = account;
+    SomApi.domainName = domainName;
     SomApi.onTestCompleted = this.onTestCompleted;
     SomApi.onError = this.onError;
     SomApi.onProgress = this.onProgress;
     SomApi.state = this;
+
+    this.setState({
+      speedTextDownload: loadingTextDownload,
+      speedTextUpload: loadingTextUpload,
+    });
+
     SomApi.startTest();
   }
 
   onTestCompleted(result) {
-    let uploadInKB = result.upload * 1024;
+    this.state.download(
+      result.download,
+      result.latency,
+      this.state,
+      this.state.props,
+    );
 
-    this.state.download(result.download, this.state);
+    this.state.upload(
+      result.upload,
+      result.latency,
+      this.state,
+      this.state.props,
+    );
+
+    let total = parseFloat(result.download) + parseFloat(result.upload);
 
     this.state.setState({
-      download: result.download,
+      velocity: total,
     });
   }
 
@@ -37,24 +63,53 @@ export default class SpeedOfMe extends Component {
   onProgress(progress) {
     this.state.setState({
       percentDone: progress.percentDone * 2,
-      download: progress.percentDone,
+      velocity: progress.percentDone,
     });
   }
 
-  download(download, state) {
+  download(download, latency, state, props) {
     let downloadInKB = download * 1024;
-    let speedText;
+    let speedTextDownload;
 
-    if (downloadInKB > 1000) {
-      speedText = 'Velocidade Execelente';
-    } else if (downloadInKB > 600) {
-      speedText = 'Velocidade Execelente';
-    } else if (downloadInKB > 300) {
-      speedText = 'Velocidade Execelente';
+    if (downloadInKB > 1000 && latency < 150) {
+      speedTextDownload = props.textdownloadexcellent;
+    } else if (downloadInKB > 600 && latency < 150) {
+      speedTextDownload = props.textdownloadexcellent;
+    } else if (downloadInKB > 300 && latency < 150) {
+      speedTextDownload = props.textdownloadexcellent;
+    } else if (downloadInKB > 350 && latency > 150) {
+      speedTextDownload = props.textdownloadacceptable;
+    } else if (downloadInKB > 250 && latency > 150) {
+      speedTextDownload = props.textdownloadacceptable;
+    } else if (downloadInKB > 150 && latency > 150) {
+      speedTextDownload = props.textdownloadacceptable;
     }
 
     state.setState({
-      speedText,
+      speedTextDownload,
+    });
+  }
+
+  upload(upload, latency, state, props) {
+    let uploadInKB = upload * 1024;
+    let speedTextUpload;
+
+    if (uploadInKB > 1000 && latency < 150) {
+      speedTextUpload = props.textuploadexcellent;
+    } else if (uploadInKB > 600 && latency < 150) {
+      speedTextUpload = props.textuploadexcellent;
+    } else if (uploadInKB > 300 && latency < 150) {
+      speedTextUpload = props.textuploadexcellent;
+    } else if (uploadInKB > 350 && latency > 150) {
+      speedTextUpload = props.textuploadacceptable;
+    } else if (uploadInKB > 250 && latency > 150) {
+      speedTextUpload = props.textuploadacceptable;
+    } else if (uploadInKB > 150 && latency > 150) {
+      speedTextUpload = props.textuploadacceptable;
+    }
+
+    state.setState({
+      speedTextUpload,
     });
   }
 
@@ -70,7 +125,12 @@ export default class SpeedOfMe extends Component {
       currentValueText,
     } = this.props;
 
-    const { percentDone, download, speedText } = this.state;
+    const {
+      percentDone,
+      velocity,
+      speedTextDownload,
+      speedTextUpload,
+    } = this.state;
 
     return (
       <div id="react-speedofme">
@@ -93,8 +153,9 @@ export default class SpeedOfMe extends Component {
         <div className="card">
           <div className="total-box flex-total-centered">
             <div className="total">
-              <div className="total-speed">{download} Mbps</div>
-              <div className="text-speed">{speedText}</div>
+              <div className="total-speed">{velocity} Mbps</div>
+              <div className="text-speed">{speedTextDownload}</div>
+              <div className="text-speed">{speedTextUpload}</div>
             </div>
           </div>
         </div>

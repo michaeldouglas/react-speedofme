@@ -1,37 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Asap');
 
 body {
+  #app-speedofme {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   #react-speedofme {
     font-family: 'Asap', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex: 1 1 auto;
 
     .card {
       padding: 0;
-      text-align: left;
+      text-align: center;
 
       .gauge {
-        width: 14.6vw;
-        height: 17vh;
+        flex-basis: 275px;
+        width: 275px;
+        height: 160px;
       }
 
       .total-box {
-        width: 15.6vw;
-        height: 17vh;
+        height: 160px;
 
         .total {
           display: block;
-          height: 8vh;
-          width: 16vw;
           text-align: center;
           .total-speed {
             color: #646464;
             font-size: 6.5ch;
             font-weight: bold;
-            line-height: 48px;
-            margin-bottom: 1.4rem;
           }
           .text-speed {
             color: #f6734e;
@@ -48,5 +47,14 @@ body {
       display: flex;
       justify-content: center;
     }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .gauge {
+    width: 326px !important;
+  }
+  #react-speedofme {
+    flex-direction: column;
   }
 }

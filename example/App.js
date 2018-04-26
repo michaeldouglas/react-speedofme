@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div id='app-speedofme'>
         <SpeedOfMe
-          account='SOM5ad8fe736ea7c'
-          domainName='127.0.0.1'
+          account=''
+          domainName=''
           segments={2}
           textColor='#FFF'
           startColor='#F4552C'
@@ -18,6 +18,12 @@ class App extends Component {
           needleTransitionDuration={4000}
           needleTransition='easeElastic'
           currentValueText='50'
+          textdownloadexcellent='Velocidade de download execelente.'
+          textdownloadacceptable='Velocidade de download aceitável.'
+          textuploadexcellent='Velocidade de upload execelente.'
+          textuploadacceptable='Velocidade de upload aceitável.'
+          loadingTextDownload='Rodando teste de Download, por favor, aguarde...'
+          loadingTextUpload='Rodando teste de Upload, por favor, aguarde...'
         />
       </div>
     );
