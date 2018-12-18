@@ -153,7 +153,7 @@ export default class SpeedOfMe extends Component {
         <div className="card">
           <div className="total-box flex-total-centered">
             <div className="total">
-              <div className="total-speed">{velocity} Mbps</div>
+              <div className="total-speed">{velocity.toFixed(2)} Mbps</div>
               <div className="text-speed">{speedTextDownload}</div>
               <div className="text-speed">{speedTextUpload}</div>
             </div>
